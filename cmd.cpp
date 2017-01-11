@@ -404,7 +404,7 @@ E.g.: <array[float[0..1]]> - 0,0.2,0.4,0.8,0.9,1\r\n\
 		}
 
 		const std::map<std::string, NTICommandLine::ValidatorEntry> NTICommandLine::VALIDATORS = {
-				/*{ Flags::MODE_CHECK_DECODE, { __check_mode, nullptr } },
+				{ Flags::MODE_CHECK_DECODE, { __check_mode, nullptr } },
 
 				{ Flags::MODE_SEND_DATA, { __check_mode, nullptr } },
                 { Flags::MODE_GENERATE_DATA, { __check_mode, nullptr } },
@@ -423,26 +423,9 @@ E.g.: <array[float[0..1]]> - 0,0.2,0.4,0.8,0.9,1\r\n\
                         return std::make_pair<bool, std::string>(std::move(success), "Noise must lie in [0, 1] interval and must not be close to a 0.5 value");
                     }
                 }
-                },*/
-                /*{ Values::PARAM_DIFFICULTIES,
-                    {	__check_noise_dif,
-                        [](const NTICommandLine &cmd, const std::string &name, const std::string &val)
-                        {
-                            auto parsed = Parse<std::vector<int>>(val);
-                            bool success = true;
-                            for (auto p : parsed)
-                                if (p < 0 || p > 10)
-                                {
-                                    success = false;
-                                    break;
-                                }
-                            return std::make_pair<bool, std::string>(std::move(success), "Difficulty must lie in [0, 10] interval.");
-                        }
-                    }
-
-                },*/
+                },
                  { Values::INOUT_NOISED_DATA,  {  __check_must_be_in <Flags::MODE_CHECK_DECODE, Flags::MODE_SEND_DATA> , nullptr } },
-                { Values::INPUT_ENCODED_DATA, { __check_must_be_in<Flags::MODE_SEND_DATA, Flags::MODE_CHECK_DECODE>, nullptr } },
+                 { Values::INPUT_ENCODED_DATA, { __check_must_be_in<Flags::MODE_SEND_DATA, Flags::MODE_CHECK_DECODE>, nullptr } },
                  { Values::INPUT_DECODED_DATA, { __check_must_be_in<Flags::MODE_CHECK_DECODE>, nullptr } },
                  { Values::INOUT_SOURCE_DATA, { __check_must_be_in<Flags::MODE_GENERATE_DATA, Flags::MODE_SEND_DATA, Flags::MODE_CHECK_DECODE>, nullptr } },
                  { Values::OUTPUT_REPORT,	  { __check_must_be_in<Flags::MODE_CHECK_DECODE>, nullptr } },
