@@ -42,7 +42,7 @@ namespace nti
 			std::transform(new_str.begin(), new_str.end(), new_str.begin(), [&noise](char val)
 			{
 				auto nval = char(noise->transform(val));
-				while (nval == '\r' || nval == '\n')
+				while (nval == '\r' || nval == '\n' || nval == ' ')
 					nval = char(noise->transform(val));
 				return nval;
 			});

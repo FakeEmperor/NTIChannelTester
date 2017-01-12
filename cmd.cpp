@@ -415,7 +415,7 @@ E.g.: <array[float[0..1]]> - 0,0.2,0.4,0.8,0.9,1\r\n\
                         auto parsed = Parse<std::vector<float>>(val);
                         bool success = true;
                         for (auto p : parsed)
-                            if (p < 0 || p > 1 || fabs(p-0.5f) <= INoiseProducer::NoiseProducerSettings::ERROR_EPS)
+                            if (p < 0 || p > 1 || fabs(p-0.5f) < INoiseProducer::NoiseProducerSettings::ERROR_EPS)
                             {
                                 success = false;
                                 break;

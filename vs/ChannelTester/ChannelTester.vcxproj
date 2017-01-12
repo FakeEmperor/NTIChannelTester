@@ -26,6 +26,8 @@
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="..\..\noise.cpp" />
     <ClCompile Include="..\..\tester.cpp" />
+    <ClCompile Include="..\..\tests\tests.cpp" />
+    <ClCompile Include="..\..\tests\tests_main.cpp" />
     <ClCompile Include="..\..\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -34,10 +36,9 @@
     <ClInclude Include="..\..\data.h" />
     <ClInclude Include="..\..\noise.h" />
     <ClInclude Include="..\..\tester.h" />
+    <ClInclude Include="..\..\tests\catch.hpp" />
+    <ClInclude Include="..\..\tests\config.h" />
     <ClInclude Include="..\..\utils.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\decoded.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1476246F-FF1A-449E-9C29-C3F538E0DC08}</ProjectGuid>

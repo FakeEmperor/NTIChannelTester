@@ -6,7 +6,7 @@
 
 namespace nti
 {
-	const float INoiseProducer::NoiseProducerSettings::ERROR_EPS = 0.1;
+	const float INoiseProducer::NoiseProducerSettings::ERROR_EPS = 0.3;
 
 
 	NoisedData::NoisedData(const std::string& source, const std::string& noised, float noise_level): source_data(source), noised_data(noised), noise_level(noise_level)
